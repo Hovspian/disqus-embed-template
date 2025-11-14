@@ -27,7 +27,8 @@
 		while (match = search.exec(query))
 		   params[decode(match[1])] = decode(match[2]);
 	    
-		if (params["shortname"] === undefined || params["url"] === undefined || params["title"] === undefined) {
+		// if (params["shortname"] === undefined || params["url"] === undefined || params["title"] === undefined) {
+		if (params["url"] === undefined || params["title"] === undefined) {
 			alert("Required arguments missing");
 		}
 		else {
@@ -38,7 +39,8 @@
 	function loadComments(shortname, url, title, identifier) {
 		disqus_url = url;
 		disqus_title = title;
-		disqus_shortname = shortname;
+		// disqus_shortname = shortname;
+		disqus_shortname = 'hovseptestrealm';
 		
 		if (identifier !== undefined)
 			disqus_identifier = identifier;
